@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from '../../config/firebase.config';
+import { UserContext } from '../../App';
 
 const LogIn = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
     if (!firebase.apps.length) {
         firebase.initializeApp(firebaseConfig);
     }
@@ -18,7 +22,13 @@ const LogIn = () => {
                 var credential = result.credential;
                 var token = credential.accessToken;
                 var user = result.user;
-                console.log(user, token);
+
+                const { photoURL, displayName, email } = result.user;
+                const signedInUser = { image: photoURL, name: displayName, email: email }
+                setLoggedInUser(signedInUser);
+                // console.log(signedInUser);
+
+                // console.log(user, token);
             })
             .catch((error) => {
                 var errorCode = error.code;

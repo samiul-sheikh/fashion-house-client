@@ -1,5 +1,6 @@
-import React from "react";
+import React, { createContext, useState } from "react";
 import './App.css';
+import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import AddProduct from './Components/AddProduct/AddProduct';
 import CheckOut from './Components/CheckOut/CheckOut';
@@ -9,31 +10,20 @@ import NoMatch from './Components/NoMatch/NoMatch';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
+export const UserContext = createContext();
+
 function App() {
+
+    const [loggedInUser, setLoggedInUser] = useState({});
+
     return (
-        <Router>
-            <div>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/addProduct">AddProduct</Link>
-                    </li>
-                    <li>
-                        <Link to="/checkOut">CheckOut</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">LogIn</Link>
-                    </li>
-                </ul>
-
-                <hr />
-
+        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            <p>Name: {loggedInUser.name}</p>
+            <Router>
+                <Header />
                 <Switch>
                     <Route exact path="/">
                         <Home />
@@ -54,8 +44,8 @@ function App() {
                         <NoMatch />
                     </Route>
                 </Switch>
-            </div>
-        </Router>
+            </Router>
+        </UserContext.Provider>
     );
 }
 
