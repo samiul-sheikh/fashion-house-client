@@ -1,22 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import Products from '../Products/Products';
 
-const products = [
-    {
-        name: 'Marks',
-        image: 'marks.png'
-    },
-    {
-        name: 'Mr. Twist',
-        image: 'mrTwist.png'
-    },
-    {
-        name: 'Ruchi',
-        image: 'ruchi.png'
-    }
-]
-
 const Home = () => {
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:8000/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+    }, [])
+
     return (
         <div className="row">
             {
