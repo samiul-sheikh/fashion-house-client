@@ -2,6 +2,8 @@ import React from "react";
 import './App.css';
 import Home from './Components/Home/Home';
 import AddProduct from './Components/AddProduct/AddProduct';
+import CheckOut from './Components/CheckOut/CheckOut';
+import LogIn from './Components/LogIn/LogIn';
 import NoMatch from './Components/NoMatch/NoMatch';
 
 import {
@@ -22,6 +24,12 @@ function App() {
                     <li>
                         <Link to="/addProduct">AddProduct</Link>
                     </li>
+                    <li>
+                        <Link to="/checkOut">CheckOut</Link>
+                    </li>
+                    <li>
+                        <Link to="/login">LogIn</Link>
+                    </li>
                 </ul>
 
                 <hr />
@@ -35,6 +43,12 @@ function App() {
                     </Route>
                     <Route path="/addProduct">
                         <AddProduct />
+                    </Route>
+                    <Route path="/checkOut">
+                        <CheckOut />
+                    </Route>
+                    <Route path="/login">
+                        <LogIn />
                     </Route>
                     <Route path="*">
                         <NoMatch />
