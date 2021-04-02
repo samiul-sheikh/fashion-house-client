@@ -31,7 +31,7 @@ function App() {
                     <Route path="/addProduct">
                         <AddProduct />
                     </Route>
-                    <PrivateRoute path="/checkOut">
+                    <PrivateRoute path="/product/:name">
                         <CheckOut />
                     </PrivateRoute>
                     <Route path="/login">
