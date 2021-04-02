@@ -34,7 +34,7 @@ const LogIn = () => {
                 history.replace(from);
                 // console.log(signedInUser);
 
-                // console.log(user, token);
+                console.log(user);
             })
             .catch((error) => {
                 var errorCode = error.code;
