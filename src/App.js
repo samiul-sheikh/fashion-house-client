@@ -7,11 +7,8 @@ import CheckOut from './Components/CheckOut/CheckOut';
 import LogIn from './Components/LogIn/LogIn';
 import NoMatch from './Components/NoMatch/NoMatch';
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -34,9 +31,9 @@ function App() {
                     <Route path="/addProduct">
                         <AddProduct />
                     </Route>
-                    <Route path="/checkOut">
+                    <PrivateRoute path="/checkOut">
                         <CheckOut />
-                    </Route>
+                    </PrivateRoute>
                     <Route path="/login">
                         <LogIn />
                     </Route>
