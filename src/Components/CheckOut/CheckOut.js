@@ -19,15 +19,30 @@ const CheckOut = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+    // send checkOut product information in database
+    const handleOrder = () => {
+        const newOrder = { ...loggedInUser, ...checkoutProduct }
+        fetch('http://localhost:8000/addOrder', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newOrder)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
+
     return (
 
         <div style={{ textAlign: 'center' }}>
             <h1>This is Checkout Page</h1>
             <h3> Hello {loggedInUser.name} ! </h3>
-            <img src={checkoutProduct.imageURL} alt=""/>
+            <p>{loggedInUser.email}</p>
+            <img src={checkoutProduct.imageURL} alt="" />
             <p>{checkoutProduct.name}</p>
             <p>{checkoutProduct.price}</p>
-            <button>cheackout</button>
+            <button onClick={handleOrder}>cheackout</button>
         </div>
     );
 };
