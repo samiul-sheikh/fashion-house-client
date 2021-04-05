@@ -9,6 +9,7 @@ import NoMatch from './Components/NoMatch/NoMatch';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Orders from "./Components/Orders/Orders";
 
 export const UserContext = createContext();
 
@@ -34,6 +35,9 @@ function App() {
                     <PrivateRoute path="/checkout/:id">
                         <CheckOut />
                     </PrivateRoute>
+                    <Route path="/orders">
+                        <Orders />
+                    </Route>
                     <Route path="/login">
                         <LogIn />
                     </Route>
