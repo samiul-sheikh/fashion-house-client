@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import './App.css';
 import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
-import AddProduct from './Components/AddProduct/AddProduct';
+import Admin from './Components/Admin/Admin';
 import CheckOut from './Components/CheckOut/CheckOut';
 import LogIn from './Components/LogIn/LogIn';
 import NoMatch from './Components/NoMatch/NoMatch';
@@ -29,8 +29,8 @@ function App() {
                     <Route exact path="/home">
                         <Home />
                     </Route>
-                    <Route path="/addProduct">
-                        <AddProduct />
+                    <Route path="/admin">
+                        <Admin />
                     </Route>
                     <PrivateRoute path="/checkout/:id">
                         <CheckOut />

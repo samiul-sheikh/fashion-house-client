@@ -21,6 +21,7 @@ const CheckOut = () => {
 
     // send checkOut product information in database
     const handleOrder = () => {
+        // new Date();
         const newOrder = { ...loggedInUser, ...checkoutProduct }
         fetch('http://localhost:8000/addOrder', {
             method: 'POST',

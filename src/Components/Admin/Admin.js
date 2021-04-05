@@ -3,7 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
 
-const AddProduct = () => {
+const Admin = () => {
 
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null)
@@ -29,7 +29,7 @@ const AddProduct = () => {
     };
 
     const handleImageUpload = product => {
-        console.log(product.target.files[0])
+        // console.log(product.target.files[0])
         const imageData = new FormData();
         imageData.set('key', 'b8a0776f79e4a37c3c341318f0f61e22')
         imageData.append('image', product.target.files[0]);
@@ -60,4 +60,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default Admin;
