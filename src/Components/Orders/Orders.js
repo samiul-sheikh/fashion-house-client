@@ -17,7 +17,7 @@ const Orders = () => {
         <div>
             <h3>You place: {orders.length} orders</h3>
             {
-                orders.map(order => <li>{order.email} product : {order.name} price: {order.price} </li>)
+                orders.map(order => <li>{order.email} product : {order.name} price: {order.price} date: {order.date} </li>)
             }
         </div>
     );

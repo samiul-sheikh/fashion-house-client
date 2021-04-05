@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 
 const Admin = () => {
 
+    const [show, setShow] = useState(true);
+
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL, setImageURL] = useState(null)
 
@@ -46,7 +48,12 @@ const Admin = () => {
     return (
         <div>
             <h3>Add Your Product Here</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            
+            <button onClick={() => setShow(false)}>Manage Product</button>
+            <button onClick={() => setShow(true)}>Add Product</button>
+
+            {show?
+                <form onSubmit={handleSubmit(onSubmit)}>
                 <input name="name" defaultValue="product name" ref={register} />
                 <br />
                 <input name="price" defaultValue="product price" ref={register} />
@@ -55,7 +62,9 @@ const Admin = () => {
                 <br />
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" />
-            </form>
+            </form>:
+            <p>Hello world</p>
+            }
         </div>
     );
 };
