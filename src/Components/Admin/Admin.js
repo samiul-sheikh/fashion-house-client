@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
 import { useForm } from "react-hook-form";
+import ManageProduct from '../ManageProduct/ManageProduct';
 
 const Admin = () => {
 
@@ -63,7 +64,8 @@ const Admin = () => {
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" />
             </form>:
-            <p>Hello world</p>
+            // <p>Hello world</p>
+            <ManageProduct></ManageProduct>
             }
         </div>
     );
