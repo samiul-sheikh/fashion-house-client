@@ -17,8 +17,8 @@ const Products = ({ product }) => {
     return (
         
         <div className="col-md-3">
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={product.imageURL} style={{ height: '300px', width: '300px' }} />
+            <Card className="px-5 py-10 shadow" style={{ width: '18rem', borderRadius: '15px' }}>
+                <Card.Img variant="top" src={product.imageURL} rounded style={{height: '300px', width: '200px'}} />
                 <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text> price: {product.price} </Card.Text>

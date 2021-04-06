@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useContext } from 'react';
+import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
 
@@ -37,13 +38,28 @@ const CheckOut = () => {
     return (
 
         <div style={{ textAlign: 'center' }}>
-            <h1>This is Checkout Page</h1>
-            <h3> Hello {loggedInUser.name} ! </h3>
-            <p>{loggedInUser.email}</p>
-            <img src={checkoutProduct.imageURL} alt="" />
-            <p>{checkoutProduct.name}</p>
-            <p>{checkoutProduct.price}</p>
-            <button onClick={handleOrder}>cheackout</button>
+            <h1>Checkout Product</h1>
+            <Table responsive striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{checkoutProduct.name}</td>
+                        <td>1</td>
+                        <td>{checkoutProduct.price}</td>
+                    </tr>
+                    <tr>
+                        <td colSpan="2">Total</td>
+                        <td>{checkoutProduct.price}</td>
+                    </tr>
+                </tbody>
+            </Table>
+            <Button style={{ textAlign: 'center' }} onClick={handleOrder} variant="primary" size="lg">Checkout</Button>
         </div>
     );
 };
