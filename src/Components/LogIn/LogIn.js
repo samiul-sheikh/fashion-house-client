@@ -4,6 +4,9 @@ import "firebase/auth";
 import firebaseConfig from '../../config/firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { Button } from 'react-bootstrap';
 
 const LogIn = () => {
 
@@ -46,9 +49,9 @@ const LogIn = () => {
     }
 
     return (
-        <div>
-            <h3>This is Login page</h3>
-            <button onClick={handleGoogleSignIn}>sing in using Google</button>
+        <div className="text-center">
+            <h3>Login</h3>
+            <Button onClick={handleGoogleSignIn} variant="outline-primary"><FontAwesomeIcon icon={faGoogle} /> Continue with Google</Button>
         </div>
     );
 };

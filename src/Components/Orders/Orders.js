@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Table } from 'react-bootstrap';
 import { UserContext } from '../../App';
 
 const Orders = () => {
@@ -16,8 +17,31 @@ const Orders = () => {
     return (
         <div>
             <h3>You place: {orders.length} orders</h3>
-            {
+            {/* {
                 orders.map(order => <li>{order.email} product : {order.name} price: {order.price} date: {order.date} </li>)
+            } */}
+            {
+                orders.map(order =>
+                    <div >
+                        <Table striped bordered hover>
+                            {/* <thead>
+                                <tr>
+                                    <th>User Email</th>
+                                    <th>Date & Time</th>
+                                    <th>Product Name</th>
+                                    <th>Product Price</th>
+                                </tr>
+                            </thead> */}
+                            <tbody>
+                                <tr>
+                                    <td>{order.email}</td>
+                                    <td>{order.date}</td>
+                                    <td>{order.name}</td>
+                                    <td>{order.price}</td>
+                                </tr>
+                            </tbody>
+                        </Table>
+                    </div>)
             }
         </div>
     );
