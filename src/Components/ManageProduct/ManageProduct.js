@@ -11,6 +11,12 @@ const ManageProduct = () => {
             .then(data => setShowProduct(data))
     }, [])
 
+    const deleteProduct = id => {
+        fetch('http://localhost:8000/deleteProduct/' + id, {
+            method: 'DELETE'
+        })
+    }
+
     return (
         <div>
             <h3>Total Product: {showProduct.length}</h3>
@@ -19,7 +25,7 @@ const ManageProduct = () => {
                     <div>
                         <h6>name: {product.name}</h6>
                         <h6>price: {product.price}</h6>
-                        <button>Delete</button>
+                        <button onClick={() => deleteProduct(product._id)}>Delete</button>
                     </div>)
             }
         </div>
