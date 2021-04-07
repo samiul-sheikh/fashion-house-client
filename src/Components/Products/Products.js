@@ -15,14 +15,16 @@ const Products = ({ product }) => {
     }
 
     return (
-        
-        <div className="col-md-3">
-            <Card className="px-5 py-10 shadow" style={{ width: '18rem', borderRadius: '15px' }}>
-                <Card.Img variant="top" src={product.imageURL} rounded style={{height: '300px', width: '200px'}} />
+
+        <div className="col-md-3 mt-4">
+            <Card className="" style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={product.imageURL} rounded />
                 <Card.Body>
-                    <Card.Title>{product.name}</Card.Title>
-                    <Card.Text> price: {product.price} </Card.Text>
-                    <Button onClick={() => handleBook(product._id)} variant="primary">Buy Now</Button>
+                    <Card.Title style={{textAlign: 'center' }}>{product.name}</Card.Title>
+                    <div className="d-flex justify-content-between">
+                        <Card.Title>{product.price}</Card.Title>
+                        <Button onClick={() => handleBook(product._id)} variant="primary">Buy Now</Button>
+                    </div>
                 </Card.Body>
             </Card>
         </div >
