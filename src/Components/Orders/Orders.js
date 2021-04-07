@@ -14,34 +14,39 @@ const Orders = () => {
             .then(data => setOrders(data));
     }, [])
 
-    return (
-        <div>
-            <h3 style={{textAlign: 'center'}}>Thank you for placed - {orders.length} orders</h3>
-            {
-                orders.map(order =>
-                    <div >
-                        <Table striped bordered hover>
-                            {/* <thead>
-                                <tr>
-                                    <th>User Email</th>
-                                    <th>Date & Time</th>
-                                    <th>Product Name</th>
-                                    <th>Product Price</th>
-                                </tr>
-                            </thead> */}
-                            <tbody>
-                                <tr>
-                                    <td>{order.email}</td>
-                                    <td>{order.date}</td>
-                                    <td>{order.name}</td>
-                                    <td>{order.price}</td>
-                                </tr>
-                            </tbody>
-                        </Table>
-                    </div>)
-            }
-        </div>
-    );
-};
+    const placeOrderList = () => {
+        return (
+            orders.map(order => {
+                return (
+                    <React.Fragment>
+                        <tbody>
+                            <tr>
+                                <td>{order.email}</td>
+                                <td>{order.date}</td>
+                                <td>{order.name}</td>
+                                <td>{order.price}</td>
+                            </tr>
+                        </tbody>
+                    </React.Fragment>
+                )
+            })
+        )
+    }
 
+    return (
+        <Table striped bordered hover>
+            <thead>
+                <tr>
+                    <th>User Email</th>
+                    <th>Date & Time</th>
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            {
+                placeOrderList()
+            }
+        </Table>
+    )
+};
 export default Orders;
