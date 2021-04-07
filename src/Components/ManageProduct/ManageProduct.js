@@ -20,25 +20,11 @@ const ManageProduct = () => {
         })
     }
 
-    return (
-        <div>
-            <h3 style={{ textAlign: 'center' }}>Total Products In Store: {showProduct.length} Items</h3>
-            {
-                showProduct.map(product =>
-                    // <div>
-                    //     <h6>name: {product.name}</h6>
-                    //     <h6>price: {product.price}</h6>
-                    //     <button onClick={() => deleteProduct(product._id)}>Delete</button>
-                    // </div>
-                    <Table responsive striped bordered hover>
-                        {/* <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead> */}
+    const productList = () => {
+        return (
+            showProduct.map(product => {
+                return (
+                    <React.Fragment>
                         <tbody>
                             <tr>
                                 <td>{product.name} </td>
@@ -53,11 +39,26 @@ const ManageProduct = () => {
                                     </Button></td>
                             </tr>
                         </tbody>
-                    </Table>
+                    </React.Fragment>
                 )
+            })
+        )
+    }
+    return (
+        <Table responsive striped bordered hover>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            {
+                productList()
             }
-        </div>
-    );
+        </Table>
+    )
 };
 
 export default ManageProduct;
