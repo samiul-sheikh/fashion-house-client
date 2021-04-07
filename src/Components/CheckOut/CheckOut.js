@@ -13,7 +13,7 @@ const CheckOut = () => {
     const [checkoutProduct, setCheckoutProduct] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:8000/product/' + id)
+        fetch('https://fashion-house-bd.herokuapp.com/product/' + id)
             .then(res => res.json())
             .then(data => setCheckoutProduct(data))
     }, [id])
@@ -24,7 +24,7 @@ const CheckOut = () => {
     const handleOrder = () => {
         const newOrder = { ...loggedInUser, ...checkoutProduct }
         newOrder.date = new Date();
-        fetch('http://localhost:8000/addOrder', {
+        fetch('https://fashion-house-bd.herokuapp.com/addOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newOrder)

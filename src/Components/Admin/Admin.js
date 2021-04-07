@@ -17,7 +17,7 @@ const Admin = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url = `http://localhost:8000/addProduct`;
+        const url = `https://fashion-house-bd.herokuapp.com/addProduct`;
         // console.log(data)
         // console.log(productData)
 

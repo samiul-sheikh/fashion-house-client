@@ -9,13 +9,13 @@ const ManageProduct = () => {
     const [showProduct, setShowProduct] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:8000/products')
+        fetch('https://fashion-house-bd.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setShowProduct(data))
     }, [])
 
     const deleteProduct = id => {
-        fetch('http://localhost:8000/deleteProduct/' + id, {
+        fetch('https://fashion-house-bd.herokuapp.com/deleteProduct/' + id, {
             method: 'DELETE'
         })
     }

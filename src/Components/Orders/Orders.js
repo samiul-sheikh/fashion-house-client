@@ -9,7 +9,7 @@ const Orders = () => {
 
     // display ordered products for specific user
     useEffect(() => {
-        fetch('http://localhost:8000/orders?email=' + loggedInUser.email)
+        fetch('https://fashion-house-bd.herokuapp.com/orders?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [])
