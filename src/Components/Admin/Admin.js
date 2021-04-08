@@ -8,7 +8,7 @@ const Admin = () => {
 
     const [show, setShow] = useState(true);
 
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [imageURL, setImageURL] = useState(null)
 
     const onSubmit = data => {
@@ -64,7 +64,6 @@ const Admin = () => {
                 {errors.exampleRequired && <span>This field is required</span>}
                 <input type="submit" />
             </form>:
-            // <p>Hello world</p>
             <ManageProduct></ManageProduct>
             }
         </div>

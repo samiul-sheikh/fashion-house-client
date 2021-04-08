@@ -4,9 +4,6 @@ import { useHistory, useParams } from 'react-router-dom';
 
 const Products = ({ product }) => {
 
-    // const { id } = useParams();
-    // console.log(id);
-
     const history = useHistory();
 
     const handleBook = id => {
