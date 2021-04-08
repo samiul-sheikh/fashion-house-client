@@ -1,8 +1,11 @@
 import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import ManageProduct from '../ManageProduct/ManageProduct';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Admin = () => {
 
@@ -28,7 +31,7 @@ const Admin = () => {
             },
             body: JSON.stringify(productData)
         })
-        .then(res => console.log('server side res ', res))
+            .then(res => console.log('server side res ', res))
     };
 
     const handleImageUpload = product => {
@@ -47,24 +50,24 @@ const Admin = () => {
     }
 
     return (
-        <div>
-            <h3>Add Your Product Here</h3>
-            
-            <button onClick={() => setShow(false)}>Manage Product</button>
-            <button onClick={() => setShow(true)}>Add Product</button>
+        <div style={{ textAlign: 'center' }}>
 
-            {show?
+            <Button onClick={() => setShow(false)} variant="primary"> <FontAwesomeIcon icon={faInfoCircle}> </FontAwesomeIcon> Manage Product</Button>
+            <Button onClick={() => setShow(true)} variant="primary"> <FontAwesomeIcon icon={faPlusCircle}> </FontAwesomeIcon> Add Product</Button>
+
+
+            {show ?
                 <form onSubmit={handleSubmit(onSubmit)}>
-                <input name="name" defaultValue="product name" ref={register} />
-                <br />
-                <input name="price" defaultValue="product price" ref={register} />
-                <br />
-                <input name="exampleRequired" type="file" onChange={handleImageUpload} />
-                <br />
-                {errors.exampleRequired && <span>This field is required</span>}
-                <input type="submit" />
-            </form>:
-            <ManageProduct></ManageProduct>
+                    <input name="name" defaultValue="product name" ref={register} />
+                    <br />
+                    <input name="price" defaultValue="product price" ref={register} />
+                    <br />
+                    <input name="exampleRequired" type="file" onChange={handleImageUpload} />
+                    <br />
+                    {errors.exampleRequired && <span>This field is required</span>}
+                    <input type="submit" />
+                </form> :
+                <ManageProduct></ManageProduct>
             }
         </div>
     );

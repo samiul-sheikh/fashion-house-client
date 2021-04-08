@@ -6,6 +6,7 @@
 - React Router
 - mongoDB
 - Express
+- FontAwesomeIcon
 ---
 ## :link: [See live project here](https://fashion-house-bd.web.app/)
 

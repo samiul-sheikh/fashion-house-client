@@ -4,6 +4,8 @@ import { useContext } from 'react';
 import { Button, Table } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { UserContext } from '../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 const CheckOut = () => {
 
@@ -38,7 +40,7 @@ const CheckOut = () => {
     return (
 
         <div style={{ textAlign: 'center' }}>
-            <h1>Checkout Product</h1>
+            <h3>Checkout Product</h3>
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>
@@ -59,7 +61,7 @@ const CheckOut = () => {
                     </tr>
                 </tbody>
             </Table>
-            <Button style={{ textAlign: 'center' }} onClick={handleOrder} variant="primary" size="lg">Checkout</Button>
+            <Button style={{ textAlign: 'center' }} onClick={handleOrder} variant="primary" size="lg"> <FontAwesomeIcon icon={faShoppingBasket}> </FontAwesomeIcon> Place Order</Button>
         </div>
     );
 };
