@@ -25,4 +25,4 @@
 https://github.com/samiul-sheikh/fashion-house-server
 
 ### `Project UI`
-<img src="./src/images/project-ui/home.png">
+<img src="./src/images/project-ui/homepage.png">
