@@ -26,3 +26,7 @@ https://github.com/samiul-sheikh/fashion-house-server
 
 ### `Project UI`
 <img src="./src/images/project-ui/homepage.png">
+<img src="./src/images/project-ui/login.png">
+<img src="./src/images/project-ui/checkout.png">
+<img src="./src/images/project-ui/orders.png">
+<img src="./src/images/project-ui/manageProduct.png>

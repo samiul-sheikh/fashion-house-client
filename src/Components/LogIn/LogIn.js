@@ -49,8 +49,7 @@ const LogIn = () => {
     }
 
     return (
-        <div className="text-center">
-            <h3>Login</h3>
+        <div className="text-center mt-5">
             <Button onClick={handleGoogleSignIn} variant="outline-primary"><FontAwesomeIcon icon={faGoogle} /> Continue with Google</Button>
         </div>
     );
