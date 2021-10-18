@@ -55,7 +55,6 @@ const Admin = () => {
             <Button onClick={() => setShow(false)} variant="primary"> <FontAwesomeIcon icon={faInfoCircle}> </FontAwesomeIcon> Manage Product</Button>
             <Button onClick={() => setShow(true)} variant="primary"> <FontAwesomeIcon icon={faPlusCircle}> </FontAwesomeIcon> Add Product</Button>
 
-
             {show ?
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input name="name" defaultValue="product name" ref={register} />

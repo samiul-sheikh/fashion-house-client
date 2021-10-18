@@ -15,11 +15,11 @@ const Products = ({ product }) => {
 
     return (
 
-        <div className="col-md-3 mt-4">
-            <Card className="" style={{ width: '18rem' }}>
+        <div className="col-lg-3 col-md-6 pb-4">
+            <Card className="">
                 <Card.Img variant="top" src={product.imageURL} rounded />
                 <Card.Body>
-                    <Card.Title style={{ textAlign: 'center' }}>{product.name}</Card.Title>
+                    <Card.Title>{product.name}</Card.Title>
                     <div className="d-flex justify-content-between">
                         <Card.Title>{product.price}</Card.Title>
                         <Button onClick={() => handleBook(product._id)} variant="primary"> <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> Buy Now</Button>

@@ -14,17 +14,19 @@ const Home = () => {
     }, [])
 
     return (
-        <div className="row">
-            {
-                products.length === 0 && <div style={{top: '50%', left: '50%', position: 'absolute', transform: 'translate(-50%,-50%)'}}>
-                    <Spinner className="" animation="border" variant="primary" />
-                </div> 
-            }
+        <section className="w-100">
+            <div className="row">
+                {
+                    products.length === 0 && <div style={{ top: '50%', left: '50%', position: 'absolute', transform: 'translate(-50%,-50%)' }}>
+                        <Spinner className="" animation="border" variant="primary" />
+                    </div>
+                }
 
-            {
-                products.map(product => <Products product={product}></Products>)
-            }
-        </div>
+                {
+                    products.map(product => <Products product={product}></Products>)
+                }
+            </div>
+        </section>
     );
 };
 
